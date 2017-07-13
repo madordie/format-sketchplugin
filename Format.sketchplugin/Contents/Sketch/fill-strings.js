@@ -8,6 +8,7 @@ function onRun(context) {
 
     var sketch = context.api()
     sketch.selectedDocument.selectedLayers.iterateWithFilter("isText", function(layer) {
-        layer.text = list[Math.floor(Math.random()*list.length)]
+//        layer.text = list[Math.floor(Math.random()*list.length)]
+        layer.text = context.name
     })
 };
