@@ -11,29 +11,24 @@ import Cocoa
 class JSFile {
     let url: URL
     let name: String
-    let fromContents: String
     var toContents: String?
     var savePath: String?
     var fileName: String { return name + ".js" }
 
     init?(_ url: URL) {
-        do {
-            fromContents = try String(contentsOf: url)
-            self.url = url
-            name = url.lastPathComponent
-            Log.p("input " + name + " OK.")
-        } catch {
-            Log.p("input " + url.lastPathComponent + " empty!")
-            return nil
-        }
+        self.url = url
+        name = url.lastPathComponent
     }
 
     func save() {
-        guard let path = savePath else { return }
-        // 文件写入
-        Log.p("writing " + fileName + "...")
+        guard let path = savePath else {
+            Log.p("我还无法识别你的sketch, 联系我给你兼容吧。。")
+            return
+        }
         if FileManager.default.createFile(atPath: path, contents: toContents?.data(using: .utf8), attributes: nil) {
-            Log.p("writed " + fileName + ".")
+            Log.p("\(fileName)已生成")
+        } else {
+            Log.p("\(fileName)无法写入..")
         }
     }
 

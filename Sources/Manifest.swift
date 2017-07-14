@@ -10,9 +10,9 @@ import Cocoa
 
 class Manifest {
 
-	let name = "Fill Strings"
-	let description = "自动填充工具"
-	let identifier = "com.madordie.sketchplugin.Fill-Strings"
+	let name = "快速填充"
+	let description = "由https://github.com/madordie/format-sketchplugin自动生成快速填充插件。"
+	let identifier = "com.madordie.sketchplugin.format"
     let version = "1.0.0"
 	let author = "Keith"
 	let authorEmail = "e.madordie@gmail.com"

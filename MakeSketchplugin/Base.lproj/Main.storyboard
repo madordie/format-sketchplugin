@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12121"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Application-->
+        <scene sceneID="JPo-4y-FX3">
+            <objects>
+                <application id="hnw-xV-0zn" sceneMemberID="viewController">
+                    <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
+                        <items>
+                            <menuItem title="MakeSketchplugin" id="1Xt-HY-uBw">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="MakeSketchplugin" systemMenu="apple" id="uQy-DD-JDr">
+                                    <items>
+                                        <menuItem title="About MakeSketchplugin" id="5kV-Vb-QxS">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Check For Updates..." id="Olw-nP-bQN">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="checkForUpdatesAction:" target="Voe-Tx-rLC" id="iu7-e3-de7"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Hide MakeSketchplugin" keyEquivalent="h" id="GY4-hn-JED">
+                                            <connections>
+                                                <action selector="hide:" target="Ady-hI-5gd" id="etG-Mu-q5M"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Hide Others" keyEquivalent="h" id="Vdr-fp-XzO">
+                                            <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                            <connections>
+                                                <action selector="hideOtherApplications:" target="Ady-hI-5gd" id="VT4-aY-XCT"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Show All" id="Kd2-mp-pUS">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="unhideAllApplications:" target="Ady-hI-5gd" id="Dhg-Le-xox"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
+                                        <menuItem title="Quit MakeSketchplugin" keyEquivalent="q" id="4sb-4s-VLi">
+                                            <connections>
+                                                <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
+                    </connections>
+                </application>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="MakeSketchplugin" customModuleProvider="target"/>
+                <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75" y="0.0"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="R2V-B0-nI4">
+            <objects>
+                <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
+                    <window key="window" title="Sketch插件生成器" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                    </window>
+                    <connections>
+                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
+                    </connections>
+                </windowController>
+                <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75" y="250"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="hIz-AP-VOD">
+            <objects>
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="MakeSketchplugin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
+                        <rect key="frame" x="0.0" y="0.0" width="620" height="558"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Zs-XU-Ak1">
+                                <rect key="frame" x="20" y="490" width="195" height="18"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="自定义文本(换行符分割):" id="d0k-9R-NGm">
+                                    <font key="font" size="17" name=".PingFangSC-Regular"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="q6g-Sd-xnw">
+                                <rect key="frame" x="221" y="488" width="70" height="21"/>
+                                <buttonCell key="cell" type="inline" title="导入文本" bezelStyle="inline" alignment="center" borderStyle="border" inset="2" id="Ov4-XV-hXA">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="14" name=".PingFangSC-Medium"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="openAction:" target="XfG-lQ-9wD" id="Mv4-Y9-zyh"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y1C-ch-cXP">
+                                <rect key="frame" x="20" y="439" width="160" height="18"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="随机填充图片文件夹" id="ZYU-Q7-F0n">
+                                    <font key="font" size="17" name=".PingFangSC-Regular"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Od1-yq-T51">
+                                <rect key="frame" x="186" y="437" width="84" height="21"/>
+                                <buttonCell key="cell" type="inline" title="导入文件夹" bezelStyle="inline" alignment="center" borderStyle="border" inset="2" id="yjP-vg-Ng8">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="14" name=".PingFangSC-Medium"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="imageOpenAction:" target="XfG-lQ-9wD" id="hzc-kM-2xZ"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7ss-GZ-G9f">
+                                <rect key="frame" x="136" y="19" width="348" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="yXB-tC-5Mp"/>
+                                </constraints>
+                                <buttonCell key="cell" type="inline" title="开始生成并安装" bezelStyle="inline" alignment="center" borderStyle="border" inset="2" id="HBZ-A0-LJ1">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="20" name=".PingFangSC-Medium"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="installAction:" target="XfG-lQ-9wD" id="MSg-3H-emR"/>
+                                </connections>
+                            </button>
+                            <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D01-1g-tGy">
+                                <rect key="frame" x="20" y="75" width="580" height="300"/>
+                                <clipView key="contentView" id="aTj-eD-4Gm">
+                                    <rect key="frame" x="1" y="1" width="578" height="298"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView importsGraphics="NO" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="4QQ-Fg-ASk">
+                                            <rect key="frame" x="0.0" y="0.0" width="578" height="298"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="textColor" name="controlShadowColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <size key="minSize" width="578" height="298"/>
+                                            <size key="maxSize" width="40233" height="10000000"/>
+                                            <attributedString key="textStorage">
+                                                <fragment content="导入自定义文件即可快速制作Sketch填充插件！">
+                                                    <attributes>
+                                                        <color key="NSColor" name="controlShadowColor" catalog="System" colorSpace="catalog"/>
+                                                        <font key="NSFont" size="16" name="PingFangSC-Regular"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        </textView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="0.98618393456375841" colorSpace="calibratedWhite"/>
+                                </clipView>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="AFP-Dh-rQe"/>
+                                </constraints>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="spz-q0-ayo">
+                                    <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="Bp6-V4-oei">
+                                    <rect key="frame" x="563" y="1" width="16" height="298"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="7Zs-XU-Ak1" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="22" id="06R-63-KCL"/>
+                            <constraint firstItem="7ss-GZ-G9f" firstAttribute="top" secondItem="D01-1g-tGy" secondAttribute="bottom" constant="20" id="14l-za-RoA"/>
+                            <constraint firstItem="Y1C-ch-cXP" firstAttribute="leading" secondItem="7Zs-XU-Ak1" secondAttribute="leading" id="C70-6W-bnh"/>
+                            <constraint firstItem="7ss-GZ-G9f" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="136" id="GGt-jW-oFq"/>
+                            <constraint firstAttribute="bottom" secondItem="7ss-GZ-G9f" secondAttribute="bottom" constant="20" id="RB9-Et-fEE"/>
+                            <constraint firstItem="Y1C-ch-cXP" firstAttribute="top" secondItem="7Zs-XU-Ak1" secondAttribute="bottom" constant="33" id="Tik-13-zRp"/>
+                            <constraint firstItem="Od1-yq-T51" firstAttribute="centerY" secondItem="Y1C-ch-cXP" secondAttribute="centerY" id="UcX-8P-Tvn"/>
+                            <constraint firstItem="7Zs-XU-Ak1" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="50" id="WWt-d9-hAv"/>
+                            <constraint firstAttribute="trailing" secondItem="7ss-GZ-G9f" secondAttribute="trailing" constant="136" id="ab4-bz-QM5"/>
+                            <constraint firstItem="D01-1g-tGy" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="guY-RA-sCt"/>
+                            <constraint firstItem="D01-1g-tGy" firstAttribute="top" secondItem="Od1-yq-T51" secondAttribute="bottom" constant="63" id="hbN-9W-sAh"/>
+                            <constraint firstItem="q6g-Sd-xnw" firstAttribute="centerY" secondItem="7Zs-XU-Ak1" secondAttribute="centerY" id="jWT-BA-Hsu"/>
+                            <constraint firstItem="Od1-yq-T51" firstAttribute="leading" secondItem="Y1C-ch-cXP" secondAttribute="trailing" constant="8" id="lrI-sj-rL8"/>
+                            <constraint firstAttribute="trailing" secondItem="D01-1g-tGy" secondAttribute="trailing" constant="20" id="qVe-Ra-2Hp"/>
+                            <constraint firstItem="q6g-Sd-xnw" firstAttribute="leading" secondItem="7Zs-XU-Ak1" secondAttribute="trailing" constant="8" id="rn1-Ol-Ie9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="log" destination="4QQ-Fg-ASk" id="yX2-xK-bxj"/>
+                    </connections>
+                </viewController>
+                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75" y="819"/>
+        </scene>
+    </scenes>
+</document>
