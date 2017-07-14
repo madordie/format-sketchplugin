@@ -13,6 +13,10 @@
 		32180D141F17294900DAEB9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32180D121F17294900DAEB9C /* Main.storyboard */; };
 		32180D1D1F1732B000DAEB9C /* SketchPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32180D1C1F1732B000DAEB9C /* SketchPlugin.swift */; };
 		32180D1F1F17344100DAEB9C /* Manifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32180D1E1F17344100DAEB9C /* Manifest.swift */; };
+		32180D231F17390C00DAEB9C /* Contents in Resources */ = {isa = PBXBuildFile; fileRef = 32180D221F17390C00DAEB9C /* Contents */; };
+		32180D251F17406200DAEB9C /* FillStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32180D241F17406200DAEB9C /* FillStrings.swift */; };
+		32180D271F1740B000DAEB9C /* JSFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32180D261F1740B000DAEB9C /* JSFile.swift */; };
+		325D7F801F17718D00C26580 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325D7F7F1F17718D00C26580 /* Log.swift */; };
 		3F4BFFE2D9ECD7B3654ED3BE /* Pods_MakeSketchplugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C38B3BB87313687274F417C /* Pods_MakeSketchplugin.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +30,10 @@
 		32180D151F17294900DAEB9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32180D1C1F1732B000DAEB9C /* SketchPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SketchPlugin.swift; sourceTree = "<group>"; };
 		32180D1E1F17344100DAEB9C /* Manifest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Manifest.swift; sourceTree = "<group>"; };
+		32180D221F17390C00DAEB9C /* Contents */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Contents; path = ../Format.sketchplugin/Contents; sourceTree = "<group>"; };
+		32180D241F17406200DAEB9C /* FillStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FillStrings.swift; sourceTree = "<group>"; };
+		32180D261F1740B000DAEB9C /* JSFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSFile.swift; sourceTree = "<group>"; };
+		325D7F7F1F17718D00C26580 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Log.swift; path = ../Log.swift; sourceTree = "<group>"; };
 		38DD786A7D47D3C9FAA9E3AA /* Pods-MakeSketchplugin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MakeSketchplugin.release.xcconfig"; path = "Pods/Target Support Files/Pods-MakeSketchplugin/Pods-MakeSketchplugin.release.xcconfig"; sourceTree = "<group>"; };
 		E7D85BB6F65CED8C965A64A1 /* Pods-MakeSketchplugin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MakeSketchplugin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MakeSketchplugin/Pods-MakeSketchplugin.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -64,6 +72,7 @@
 		32180D0B1F17294900DAEB9C /* MakeSketchplugin */ = {
 			isa = PBXGroup;
 			children = (
+				325D7F7F1F17718D00C26580 /* Log.swift */,
 				32180D0C1F17294900DAEB9C /* AppDelegate.swift */,
 				32180D0E1F17294900DAEB9C /* ViewController.swift */,
 				32180D101F17294900DAEB9C /* Assets.xcassets */,
@@ -78,6 +87,9 @@
 			children = (
 				32180D1C1F1732B000DAEB9C /* SketchPlugin.swift */,
 				32180D1E1F17344100DAEB9C /* Manifest.swift */,
+				32180D261F1740B000DAEB9C /* JSFile.swift */,
+				32180D241F17406200DAEB9C /* FillStrings.swift */,
+				32180D221F17390C00DAEB9C /* Contents */,
 			);
 			name = sources;
 			sourceTree = "<group>";
@@ -162,6 +174,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32180D231F17390C00DAEB9C /* Contents in Resources */,
 				32180D111F17294900DAEB9C /* Assets.xcassets in Resources */,
 				32180D141F17294900DAEB9C /* Main.storyboard in Resources */,
 			);
@@ -223,7 +236,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				32180D1F1F17344100DAEB9C /* Manifest.swift in Sources */,
+				325D7F801F17718D00C26580 /* Log.swift in Sources */,
 				32180D0F1F17294900DAEB9C /* ViewController.swift in Sources */,
+				32180D271F1740B000DAEB9C /* JSFile.swift in Sources */,
+				32180D251F17406200DAEB9C /* FillStrings.swift in Sources */,
 				32180D1D1F1732B000DAEB9C /* SketchPlugin.swift in Sources */,
 				32180D0D1F17294900DAEB9C /* AppDelegate.swift in Sources */,
 			);

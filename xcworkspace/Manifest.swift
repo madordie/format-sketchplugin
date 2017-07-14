@@ -7,50 +7,19 @@
 //
 
 import Cocoa
-import ObjectMapper
 
-class Manifest: Mappable{
+class Manifest {
 
-	var author: String?
-	var authorEmail: String?
-	var commands: [Command]?
-	var description: String?
-	var identifier: String?
-	var name: String?
-	var version: String?
+	let name = "Fill Strings"
+	let description = "自动填充工具"
+	let identifier = "com.madordie.sketchplugin.Fill-Strings"
+    let version = "1.0.0"
+	let author = "Keith"
+	let authorEmail = "e.madordie@gmail.com"
+	var commands = [String?]()
 
-	required init?(map: Map){}
-
-	func mapping(map: Map)
-	{
-		author <- map["author"]
-		authorEmail <- map["authorEmail"]
-		commands <- map["commands"]
-		description <- map["description"]
-		identifier <- map["identifier"]
-		name <- map["name"]
-		version <- map["version"]
-	}
-
-}
-
-class Command: Mappable{
-
-	var handler: String?
-	var identifier: String?
-	var name: String?
-	var script: String?
-	var shortcut: String?
-
-	required init?(map: Map){}
-
-	func mapping(map: Map)
-	{
-		handler <- map["handler"]
-		identifier <- map["identifier"]
-		name <- map["name"]
-		script <- map["script"]
-		shortcut <- map["shortcut"]
-	}
-
+    func json() -> String {
+        let tools = commands.flatMap { $0 }.joined(separator: ",")
+        return "{\"name\":\"\(name)\",\"identifier\":\"\(identifier)\",\"version\":\"\(version)\",\"description\":\"\(description)\",\"authorEmail\":\"\(authorEmail)\",\"author\":\"\(author)\",\"commands\":[\(tools)]}"
+    }
 }

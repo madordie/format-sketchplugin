@@ -7,19 +7,29 @@
 //
 
 import Cocoa
-import ObjectMapper
 
 open class SketchPlugin {
+    /// 主目录信息
+    let manifest = Manifest()
+    var files = [JSFile]()
+    var path: URL?
 
-    public init(path: String) {
-//        manifest = Mapp
-    }
+    func save() {
+        guard let path = path?.appendingPathComponent("\(manifest.name).sketchplugin/Contents/Sketch") else { return }
 
-    fileprivate var manifest: Manifest?
-}
+        manifest.commands = files.flatMap { $0.command() }
+        do {
+            try FileManager.default.createDirectory(at: path, withIntermediateDirectories: true, attributes: nil)
+            guard FileManager.default.createFile(atPath: path.appendingPathComponent("/manifest.json").path, contents: manifest.json().data(using: .utf8), attributes: nil) else { return }
 
-extension SketchPlugin {
-    public func install() {
-        print("xx")
+            for file in files {
+                file.savePath = path.appendingPathComponent(file.fileName).path
+                file.save()
+            }
+            Log.p("save OK!")
+        } catch {
+            Log.p("save error:\(error)")
+            return
+        }
     }
 }
