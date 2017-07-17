@@ -45,7 +45,7 @@ open class SketchPlugin {
             Log.p("目录操作失败：\(path)\(error)")
             return false
         }
-        Log.p("制作完毕！生成路径:\(path)")
+        Log.p("制作完毕！生成路径:\(path.path)")
         return true
     }
 }

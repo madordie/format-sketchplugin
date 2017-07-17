@@ -94,11 +94,11 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="MakeSketchplugin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="620" height="558"/>
+                        <rect key="frame" x="0.0" y="0.0" width="620" height="528"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Zs-XU-Ak1">
-                                <rect key="frame" x="20" y="490" width="195" height="18"/>
+                                <rect key="frame" x="20" y="460" width="195" height="18"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="自定义文本(换行符分割):" id="d0k-9R-NGm">
                                     <font key="font" size="17" name=".PingFangSC-Regular"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -106,7 +106,7 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="q6g-Sd-xnw">
-                                <rect key="frame" x="221" y="488" width="70" height="21"/>
+                                <rect key="frame" x="221" y="458" width="70" height="21"/>
                                 <buttonCell key="cell" type="inline" title="导入文本" bezelStyle="inline" alignment="center" borderStyle="border" inset="2" id="Ov4-XV-hXA">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" size="14" name=".PingFangSC-Medium"/>
@@ -116,7 +116,7 @@
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y1C-ch-cXP">
-                                <rect key="frame" x="20" y="439" width="160" height="18"/>
+                                <rect key="frame" x="20" y="409" width="160" height="18"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="随机填充图片文件夹" id="ZYU-Q7-F0n">
                                     <font key="font" size="17" name=".PingFangSC-Regular"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -124,7 +124,7 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Od1-yq-T51">
-                                <rect key="frame" x="186" y="437" width="84" height="21"/>
+                                <rect key="frame" x="186" y="407" width="84" height="21"/>
                                 <buttonCell key="cell" type="inline" title="导入文件夹" bezelStyle="inline" alignment="center" borderStyle="border" inset="2" id="yjP-vg-Ng8">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" size="14" name=".PingFangSC-Medium"/>
@@ -197,7 +197,7 @@
                             <constraint firstItem="7Zs-XU-Ak1" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="50" id="WWt-d9-hAv"/>
                             <constraint firstAttribute="trailing" secondItem="7ss-GZ-G9f" secondAttribute="trailing" constant="136" id="ab4-bz-QM5"/>
                             <constraint firstItem="D01-1g-tGy" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="guY-RA-sCt"/>
-                            <constraint firstItem="D01-1g-tGy" firstAttribute="top" secondItem="Od1-yq-T51" secondAttribute="bottom" constant="63" id="hbN-9W-sAh"/>
+                            <constraint firstItem="D01-1g-tGy" firstAttribute="top" secondItem="Od1-yq-T51" secondAttribute="bottom" constant="33" id="hbN-9W-sAh"/>
                             <constraint firstItem="q6g-Sd-xnw" firstAttribute="centerY" secondItem="7Zs-XU-Ak1" secondAttribute="centerY" id="jWT-BA-Hsu"/>
                             <constraint firstItem="Od1-yq-T51" firstAttribute="leading" secondItem="Y1C-ch-cXP" secondAttribute="trailing" constant="8" id="lrI-sj-rL8"/>
                             <constraint firstAttribute="trailing" secondItem="D01-1g-tGy" secondAttribute="trailing" constant="20" id="qVe-Ra-2Hp"/>
