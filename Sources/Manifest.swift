@@ -10,7 +10,7 @@ import Cocoa
 
 class Manifest {
 
-	let name = "快速填充"
+	let name = "Format"
 	let description = "由https://github.com/madordie/format-sketchplugin自动生成快速填充插件。"
 	let identifier = "com.madordie.sketchplugin.format"
     let version = "1.0.0"
