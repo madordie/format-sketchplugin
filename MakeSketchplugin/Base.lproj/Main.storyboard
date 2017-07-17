@@ -138,7 +138,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="yXB-tC-5Mp"/>
                                 </constraints>
-                                <buttonCell key="cell" type="inline" title="开始生成并安装" bezelStyle="inline" alignment="center" borderStyle="border" inset="2" id="HBZ-A0-LJ1">
+                                <buttonCell key="cell" type="inline" title="开始生成并导出" bezelStyle="inline" alignment="center" borderStyle="border" inset="2" id="HBZ-A0-LJ1">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" size="20" name=".PingFangSC-Medium"/>
                                 </buttonCell>
