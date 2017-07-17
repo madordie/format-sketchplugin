@@ -12,43 +12,49 @@
                 <application id="hnw-xV-0zn" sceneMemberID="viewController">
                     <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
                         <items>
-                            <menuItem title="MakeSketchplugin" id="1Xt-HY-uBw">
+                            <menuItem title="Sketch插件生成器" id="1Xt-HY-uBw">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="MakeSketchplugin" systemMenu="apple" id="uQy-DD-JDr">
+                                <menu key="submenu" title="Sketch插件生成器" systemMenu="apple" id="s8i-YA-xBR">
                                     <items>
-                                        <menuItem title="About MakeSketchplugin" id="5kV-Vb-QxS">
+                                        <menuItem title="About MakeSketchplugin" id="c4T-s0-F4G">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
-                                                <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
+                                                <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="w2K-ir-dd5"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Check For Updates..." id="Olw-nP-bQN">
+                                        <menuItem title="Documentation" id="Pzi-hD-k99" userLabel="Documentation">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
-                                                <action selector="checkForUpdatesAction:" target="Voe-Tx-rLC" id="iu7-e3-de7"/>
+                                                <action selector="documentationAction:" target="Voe-Tx-rLC" id="Pey-ao-0Fo"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Hide MakeSketchplugin" keyEquivalent="h" id="GY4-hn-JED">
+                                        <menuItem title="Check For Updates..." id="Fus-Q0-6l8">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
-                                                <action selector="hide:" target="Ady-hI-5gd" id="etG-Mu-q5M"/>
+                                                <action selector="checkForUpdatesAction:" target="Voe-Tx-rLC" id="MVV-Nm-mVL"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Hide Others" keyEquivalent="h" id="Vdr-fp-XzO">
+                                        <menuItem title="Hide MakeSketchplugin" keyEquivalent="h" id="2bw-uT-6Ca">
+                                            <connections>
+                                                <action selector="hide:" target="Ady-hI-5gd" id="HNU-U4-mfj"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Hide Others" keyEquivalent="h" id="6G4-RU-65d">
                                             <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
                                             <connections>
-                                                <action selector="hideOtherApplications:" target="Ady-hI-5gd" id="VT4-aY-XCT"/>
+                                                <action selector="hideOtherApplications:" target="Ady-hI-5gd" id="TKt-Je-Acr"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Show All" id="Kd2-mp-pUS">
+                                        <menuItem title="Show All" id="S8n-xm-ZLZ">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
-                                                <action selector="unhideAllApplications:" target="Ady-hI-5gd" id="Dhg-Le-xox"/>
+                                                <action selector="unhideAllApplications:" target="Ady-hI-5gd" id="8aN-N3-LcY"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
-                                        <menuItem title="Quit MakeSketchplugin" keyEquivalent="q" id="4sb-4s-VLi">
+                                        <menuItem isSeparatorItem="YES" id="J86-gx-PiT"/>
+                                        <menuItem title="Quit MakeSketchplugin" keyEquivalent="q" id="QVM-Ed-E4L">
                                             <connections>
-                                                <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
+                                                <action selector="terminate:" target="Ady-hI-5gd" id="HGF-Tz-7yl"/>
                                             </connections>
                                         </menuItem>
                                     </items>

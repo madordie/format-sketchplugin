@@ -28,13 +28,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     let alertResult = versionChecker.showAlertView(Title: newVersion["Title"] as! String, SubTitle: newVersion["SubTitle"] as! String, ConfirmBtn: newVersion["ConfirmBtn"] as! String, CancelBtn: newVersion["CancelBtn"] as! String)
                     print(alertResult)
                     if (newVersion["newVersion"] as! Bool && alertResult == 1000){
-                        NSWorkspace.shared().open(URL(string: "https://github.com/madordie/format-sketchplugin")!)
+                        NSWorkspace.shared().open(URL(string: "https://github.com/madordie/format-sketchplugin/releases")!)
                     }
                 }
             }
         }
     }
 
+    @IBAction func documentationAction(_ sender: NSMenuItem) {
+        NSWorkspace.shared().open(URL(string: "https://github.com/madordie/format-sketchplugin")!)
+    }
 }
 
 
@@ -75,7 +78,7 @@ class VersionChecker: NSObject {
         return action
     }
     func parserVersionString(strIn: String) -> Array<Int>{
-        var strTmp = strIn.substring(to: (strIn.range(of: "-")?.lowerBound)!)
+        var strTmp = strIn
         if !strTmp.hasSuffix(".") {
             strTmp += "."
         }
