@@ -13,6 +13,7 @@ class JSFile {
     let name: String
     var toContents: String?
     var savePath: String?
+    var resourcesPath: String?
     var fileName: String { return name + ".js" }
 
     init?(_ url: URL) {

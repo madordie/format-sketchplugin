@@ -21,7 +21,11 @@ open class SketchPlugin {
             return false
         }
 
-        guard let path = path?.appendingPathComponent("\(manifest.name).sketchplugin/Contents/Sketch") else {
+        guard let path = self.path?.appendingPathComponent("\(manifest.name).sketchplugin/Contents/Sketch") else {
+            Log.p("无法识别生成目录:\(String(describing: self.path))")
+            return false
+        }
+        guard let resourcesPath = self.path?.appendingPathComponent("\(manifest.name).sketchplugin/Contents/Resources") else {
             Log.p("无法识别生成目录:\(String(describing: self.path))")
             return false
         }
@@ -31,6 +35,9 @@ open class SketchPlugin {
             if FileManager.default.isExecutableFile(atPath: path.path) {
                 try FileManager.default.removeItem(atPath: path.path)
             }
+            if FileManager.default.isExecutableFile(atPath: resourcesPath.path) {
+                try FileManager.default.removeItem(atPath: resourcesPath.path)
+            }
             try FileManager.default.createDirectory(at: path, withIntermediateDirectories: true, attributes: nil)
             guard FileManager.default.createFile(atPath: path.appendingPathComponent("/manifest.json").path, contents: manifest.json().data(using: .utf8), attributes: nil) else {
                 Log.p("最关键的manifest.json无法写入:\(path)")
@@ -39,6 +46,7 @@ open class SketchPlugin {
 
             for file in files {
                 file.savePath = path.appendingPathComponent(file.fileName).path
+                file.resourcesPath = resourcesPath.path
                 file.save()
             }
         } catch {

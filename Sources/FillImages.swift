@@ -39,22 +39,23 @@ class FillImages: JSFile {
     }
 
     override func save() {
-        guard let savePath = savePath else { return }
+        guard let resourcesPath = resourcesPath else { return }
 
+        let resourcesUrl = URL(fileURLWithPath: resourcesPath)
         let manager = FileManager.default
         let urls = images.map { $0.url }
-        let imagesURL = URL(fileURLWithPath: savePath).deletingLastPathComponent().appendingPathComponent(name)
 
         var toUrls = [String]()
         do {
+            try FileManager.default.createDirectory(at: resourcesUrl, withIntermediateDirectories: true, attributes: nil)
             for url in urls {
-                try FileManager.default.createDirectory(at: imagesURL, withIntermediateDirectories: true, attributes: nil)
-                let toUrl = imagesURL.appendingPathComponent(url.lastPathComponent)
+                let newLastPath = url.deletingLastPathComponent().lastPathComponent + "_" + url.lastPathComponent
+                let toUrl = resourcesUrl.appendingPathComponent(newLastPath)
                 try manager.copyItem(at: url, to: toUrl)
-                toUrls.append(toUrl.path)
+                toUrls.append(newLastPath)
             }
         } catch {
-            Log.p("复制资源图片时出错了...\n\(urls) -> \(imagesURL)\n\(error)\n")
+            Log.p("复制资源图片时出错了...\n\(urls) -> \(resourcesPath)\n\(error)\n")
             return
         }
         guard toUrls.count > 0 else {
@@ -63,11 +64,10 @@ class FillImages: JSFile {
         }
 
         let source = "[\"" + toUrls.joined(separator: "\",\"") + "\"]"
-        toContents = "function onRun(context) { var list=\(source);var selection=context.selection;for(var i=0;i<[selection count];i++){var image=[[NSImage alloc]initByReferencingFile:list[Math.floor(Math.random()*list.length)]];var layer=selection[i];if([layer class]==MSShapeGroup){var fill=layer.style().fills().firstObject();fill.setFillType(4);fill.setImage(MSImageData.alloc().initWithImage_convertColorSpace(image,false));fill.setPatternFillType(1)}} };"
+        toContents = "function onRun(context) { var list=\(source);var selection=context.selection;for(var i=0;i<[selection count];i++){var url=context.api().resourceNamed(list[Math.floor(Math.random()*list.length)]);if(url==nil){continue}var image=[[NSImage alloc]initByReferencingURL:url];var layer=selection[i];if([layer class]==MSShapeGroup){var fill=layer.style().fills().firstObject();fill.setFillType(4);fill.setImage(MSImageData.alloc().initWithImage_convertColorSpace(image,false));fill.setPatternFillType(1)}}};"
 
         super.save()
     }
-
 }
 
 class Image {
